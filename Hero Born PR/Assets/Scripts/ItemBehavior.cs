@@ -10,7 +10,19 @@ public class ItemBehavior : MonoBehaviour
         {
             Destroy(this.transform.parent.gameObject);
 
-            Debug.Log("Item collected!");
+            if (this.name == "Health_Pickup")
+            {
+                Debug.Log("Health Item collected!");
+            } else if (this.name == "Strength_Pickup")
+            {
+                Debug.Log("Strength Item collected!");
+            } else if (this.name == "Speed_Pickup")
+            {
+                Debug.Log("Speed Item collected!");
+            } else if (this.name == "Pogo_Pickup")
+            {
+                Debug.Log("Pogo Item collected!");
+            }
         }
     }
 }
