@@ -10,7 +10,37 @@ public class PlayerBehavior : MonoBehaviour
     private float vInput;
     private float hInput;
 
+    public float speedMultiplier = 2f;
+    public float totalSeconds = 5f;
+
+    private bool pogoEffect = false;
+
     private Rigidbody _rb;
+
+    void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.name)
+        {
+            case "Health_Pickup":
+            {
+                Debug.Log("Health Item collected!");
+                Destroy(collision.gameObject.transform.parent.gameObject);
+                break;
+            }
+                /*else if (this.name == "Strength_Pickup")
+                {
+                    Debug.Log("Strength Item collected!");
+                }
+                else if (this.name == "Speed_Pickup")
+                {
+                    Debug.Log("Speed Item collected!");
+                }
+                else if (this.name == "Pogo_Pickup")
+                {
+                    Debug.Log("Pogo Item collected!");
+                }*/
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
