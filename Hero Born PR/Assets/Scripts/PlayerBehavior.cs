@@ -6,45 +6,24 @@ public class PlayerBehavior : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public float rotateSpeed = 75f;
+    public float jumpVelocity = 5f;
+
+    public GameObject bullet;
+    public float bulletSpeed = 100f;
+
+    public float distanceToGround = 0.1f;
+    public LayerMask groundLayer;
 
     private float vInput;
     private float hInput;
 
-    public float speedMultiplier = 2f;
-    public float totalSeconds = 5f;
-
-    private bool pogoEffect = false;
-
     private Rigidbody _rb;
-
-    void OnCollisionEnter(Collision collision)
-    {
-        switch (collision.gameObject.name)
-        {
-            case "Health_Pickup":
-            {
-                Debug.Log("Health Item collected!");
-                Destroy(collision.gameObject.transform.parent.gameObject);
-                break;
-            }
-                /*else if (this.name == "Strength_Pickup")
-                {
-                    Debug.Log("Strength Item collected!");
-                }
-                else if (this.name == "Speed_Pickup")
-                {
-                    Debug.Log("Speed Item collected!");
-                }
-                else if (this.name == "Pogo_Pickup")
-                {
-                    Debug.Log("Pogo Item collected!");
-                }*/
-        }
-    }
+    private CapsuleCollider _col;
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _col = GetComponent<CapsuleCollider>();
     }
 
     // Update is called once per frame
@@ -55,7 +34,18 @@ public class PlayerBehavior : MonoBehaviour
         /*
         this.transform.Translate(Vector3.forward * vInput * Time.deltaTime);
         this.transform.Rotate(Vector3.up * hInput * Time.deltaTime);
-        */ 
+        */
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+            _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject newBullet = Instantiate(bullet, this.transform.position + this.transform.right, this.transform.rotation) as GameObject;
+            Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
+            bulletRB.velocity = this.transform.forward * bulletSpeed;
+        }
     }
 
     void FixedUpdate()
@@ -66,5 +56,13 @@ public class PlayerBehavior : MonoBehaviour
 
         _rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime);
         _rb.MoveRotation(_rb.rotation * angleRot);
+    }
+
+    private bool IsGrounded()
+    {
+        Vector3 capsuleBottom = new Vector3(_col.bounds.center.x, _col.bounds.min.y, _col.bounds.center.z);
+        bool grounded = Physics.CheckCapsule(_col.bounds.center, capsuleBottom, distanceToGround, groundLayer, QueryTriggerInteraction.Ignore);
+
+        return grounded;
     }
 }
