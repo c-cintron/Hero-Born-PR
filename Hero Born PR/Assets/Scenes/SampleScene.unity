@@ -3207,7 +3207,11 @@ GameObject:
   - component: {fileID: 1753019694}
   - component: {fileID: 1753019693}
   - component: {fileID: 1753019692}
+<<<<<<< Updated upstream
   m_Layer: 3
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4066,6 +4070,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream
     - target: {fileID: 1452393159515422884, guid: 3296e266745787348a23eb2e63529f23, type: 3}
       propertyPath: m_LocalPosition.y
       value: -13.680639
@@ -4090,10 +4095,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 2312321505123640626, guid: 3296e266745787348a23eb2e63529f23, type: 3}
       propertyPath: m_Name
       value: Pogo_Pickup
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 6503877011548249384, guid: 3296e266745787348a23eb2e63529f23, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -4106,6 +4114,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8ca16f4f8fd4b9248ba93e05598fe40a, type: 2}
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 8554255300522439587, guid: 3296e266745787348a23eb2e63529f23, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -4116,7 +4126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8554255300522439587, guid: 3296e266745787348a23eb2e63529f23, type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< Updated upstream
       value: 14.5
+=======
+      value: 14.680639
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8554255300522439587, guid: 3296e266745787348a23eb2e63529f23, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4293,6 +4307,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speed_Pickup
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 2464190771952461896, guid: 2fafdd992fbc1e74584add087c3ed70d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -4321,6 +4336,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 4657758090597112655, guid: 2fafdd992fbc1e74584add087c3ed70d, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -4331,7 +4348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4657758090597112655, guid: 2fafdd992fbc1e74584add087c3ed70d, type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< Updated upstream
       value: 14.5
+=======
+      value: 14.680639
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4657758090597112655, guid: 2fafdd992fbc1e74584add087c3ed70d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4365,6 +4386,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 6244163595434708967, guid: 2fafdd992fbc1e74584add087c3ed70d, type: 3}
       propertyPath: m_Controller
       value: 
@@ -4373,6 +4395,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fafdd992fbc1e74584add087c3ed70d, type: 3}
 --- !u!1001 &8763600166394386897
@@ -4396,7 +4420,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5188485811563098484, guid: dcfa30bfcc2342d44a08b5a89e357922, type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< Updated upstream
       value: 14.5
+=======
+      value: 14.680639
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5188485811563098484, guid: dcfa30bfcc2342d44a08b5a89e357922, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4430,9 +4458,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 7274874886610395135, guid: dcfa30bfcc2342d44a08b5a89e357922, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcfa30bfcc2342d44a08b5a89e357922, type: 3}
