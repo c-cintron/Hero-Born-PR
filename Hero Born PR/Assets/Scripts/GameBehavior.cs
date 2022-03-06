@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameBehavior : MonoBehaviour
 {
     public bool showWinScreen = false;
+    public bool showLossScreen = false;
 
     public string labelText = "Collect all 4 items and win your freedom!";
     public int maxItems = 4;
@@ -41,7 +42,41 @@ public class GameBehavior : MonoBehaviour
         {
             _playerHP = value;
             Debug.LogFormat("Lives: {0}", _playerHP);
+
+            if (_playerHP <= 0)
+            {
+                labelText = "this text is at the bottom of the screen why are you even reading this you weirdo";
+                showLossScreen = true;
+                Time.timeScale = 0;
+            }
+            else
+            {
+                labelText = "oof";
+            }
         }
+    }
+
+    private int _lives = 3;
+    public int EnemyLives
+    {
+        get { return _lives; }
+
+        set
+        {
+            _lives = value;
+
+            if (_lives <= 0)
+            {
+                showWinScreen = true;
+                Time.timeScale = 0;
+            }
+        }
+    }
+
+    void RestartLevel()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1.0f;
     }
 
     void OnGUI()
@@ -53,12 +88,18 @@ public class GameBehavior : MonoBehaviour
         if (showWinScreen)
         {
             if (GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 200, 100), "YOU WON!"))
-                {
-                SceneManager.LoadScene(0);
-                Time.timeScale = 1.0f;
-                }
+            {
+                RestartLevel();
+            }
         }
-    }
+        if (showLossScreen)
+        {
+            if (GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 200, 100), "Try Again Buddy! :)"))
+            {
+                RestartLevel();
+            }
+        }
+}
     // Start is called before the first frame update
     void Start()
     {
